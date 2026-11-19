@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="10 vidéos courtes par mois pour ton app ou ton commerce. Première vidéo d'essai gratuite.">
+<title>Dix vidéos par mois</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Inter:wght@400;500;600&display=swap">
+<style>
+/* Mise en page : une colonne large, titre énorme à gauche, un téléphone 9:16 à droite qui montre le lot de 10. Coins carrés partout. */
+:root {
+  --bg: #F2F4F8; --surface: #FFFFFF; --ink: #0F172B; --muted: #55607A; --line: #C9D0DE;
+  --accent: #2443F5; --on-accent: #FFFFFF; --mark: #FFC42E; --on-mark: #0F172B;
+  --display: "Bricolage Grotesque", "Arial Black", system-ui, sans-serif;
+  --body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #0B1020; --surface: #131A30; --ink: #EEF1F8; --muted: #9AA5BF; --line: #2A3352;
+  --accent: #6F86FF; --on-accent: #0B1020; --mark: #FFC42E; --on-mark: #0F172B; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #0B1020; --surface: #131A30; --ink: #EEF1F8; --muted: #9AA5BF; --line: #2A3352;
+  --accent: #6F86FF; --on-accent: #0B1020; --mark: #FFC42E; --on-mark: #0F172B; color-scheme: dark }
+body { background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 17px; line-height: 1.55; }
+.wrap { max-width: 1040px; margin: 0 auto; padding-block: 40px 72px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  display: flex; flex-direction: column; gap: 72px; }
+h1, h2 { font-family: var(--display); text-wrap: balance; margin: 0; letter-spacing: -0.02em; }
+h1 { font-size: clamp(2.6rem, 8vw, 5.2rem); line-height: 0.98; font-weight: 800; }
+h1 mark { background: var(--mark); color: var(--on-mark); padding: 0 0.12em; }
+h2 { font-size: clamp(1.7rem, 4vw, 2.5rem); line-height: 1.08; font-weight: 800; }
+p { margin: 0; max-width: 60ch; }
+.hero { display: flex; flex-wrap: wrap; gap: 40px; align-items: center; }
+.hero-text { flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 24px; }
+.lead { font-size: 1.15rem; color: var(--muted); }
+.btn { display: inline-block; align-self: flex-start; background: var(--accent); color: var(--on-accent); font-weight: 600;
+  padding: 16px 24px; text-decoration: none; font-size: 1.05rem; }
+.btn:focus-visible, a:focus-visible { outline: 3px solid var(--mark); outline-offset: 3px; }
+.phone { flex: 0 1 250px; aspect-ratio: 9 / 16; max-width: 100%; background: var(--ink); padding: 10px;
+  display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: repeat(5, 1fr); gap: 6px; }
+.phone span { background: var(--accent); color: var(--on-accent); font-family: var(--display); font-weight: 800;
+  font-size: 1.3rem; display: flex; align-items: flex-end; padding: 6px 8px; font-variant-numeric: tabular-nums; }
+.phone span:nth-child(3n) { background: var(--mark); color: var(--on-mark); }
+.phone span:nth-child(4n) { background: var(--surface); color: var(--ink); }
+section { display: flex; flex-direction: column; gap: 24px; }
+.list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 0; border-top: 2px solid var(--ink); }
+.list li { padding: 18px 16px 18px 0; border-bottom: 1px solid var(--line); min-width: 0; }
+.list strong { display: block; font-family: var(--display); font-size: 1.2rem; }
+.steps { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0; counter-reset: s; }
+.steps li { counter-increment: s; display: flex; gap: 20px; align-items: baseline; padding: 18px 0; border-bottom: 1px solid var(--line); }
+.steps li::before { content: counter(s); font-family: var(--display); font-weight: 800; font-size: 2.2rem; color: var(--accent); min-width: 1.2em; line-height: 1; }
+.steps div { min-width: 0; }
+.examples { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 12px; }
+.examples figure { margin: 0; display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.examples video { width: 100%; aspect-ratio: 9 / 16; max-width: 100%; background: var(--ink); object-fit: cover; display: block; }
+.examples figcaption { color: var(--muted); font-size: 0.85rem; }
+.price { display: flex; flex-wrap: wrap; gap: 0; border: 2px solid var(--ink); background: var(--surface); }
+.price > div { flex: 1 1 240px; padding: 24px; min-width: 0; }
+.price > div + div { border-left: 1px solid var(--line); }
+.amount { font-family: var(--display); font-weight: 800; font-size: 3rem; line-height: 1; font-variant-numeric: tabular-nums; }
+.note { color: var(--muted); font-size: 0.95rem; }
+.cta { background: var(--ink); color: var(--bg); padding: 40px 24px; gap: 20px; }
+.cta p { color: var(--bg); }
+.cta .btn { background: var(--mark); color: var(--on-mark); }
+.todo { border: 2px dashed var(--accent); padding: 12px 14px; font-size: 0.92rem; color: var(--muted); max-width: none; }
+footer { color: var(--muted); font-size: 0.9rem; }
+body { margin: 0; }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header class="hero">
+    <div class="hero-text">
+      <h1><mark>10 vidéos</mark> courtes par mois pour ton app ou ton commerce</h1>
+      <p class="lead">Des vidéos verticales prêtes à publier sur TikTok, Reels et Shorts. Tu envoies ton logo et trois phrases sur ce que tu vends. Tu reçois tes vidéos en 5 jours.</p>
+      <a class="btn" href="#essai">Je veux ma vidéo d'essai gratuite</a>
+    </div>
+    <div class="phone" aria-label="Un lot de dix vidéos au format téléphone">
+      <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span>
+    </div>
+  </header>
+
+  <section>
+    <h2>Ce que tu reçois</h2>
+    <ul class="list">
+      <li><strong>10 vidéos</strong>De 15 à 30 secondes, au format téléphone 9:16.</li>
+      <li><strong>Ton image</strong>Tes couleurs, ton logo, ta façon de parler.</li>
+      <li><strong>10 légendes</strong>Une légende prête à coller sous chaque vidéo.</li>
+      <li><strong>2 retouches</strong>Deux allers-retours de corrections compris.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Comment ça se passe</h2>
+    <ol class="steps">
+      <li><div>Tu réponds à 5 questions sur ton activité.</div></li>
+      <li><div>Tu reçois une première vidéo d'essai sous 48 heures. Elle est gratuite et elle est à toi.</div></li>
+      <li><div>Si elle te plaît, on lance le lot. Tu as tes 10 vidéos 5 jours après.</div></li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Des exemples</h2>
+    <p class="note">Six pubs faites pour deux applications.</p>
+    <div class="examples">
+      <figure><video src="exemples/lvc-braquage.mp4" muted playsinline controls preload="metadata"></video><figcaption>La Vie Continue</figcaption></figure>
+      <figure><video src="exemples/lvc-chien.mp4" muted playsinline controls preload="metadata"></video><figcaption>La Vie Continue</figcaption></figure>
+      <figure><video src="exemples/lvc-karaoke.mp4" muted playsinline controls preload="metadata"></video><figcaption>La Vie Continue</figcaption></figure>
+      <figure><video src="exemples/after-4h.mp4" muted playsinline controls preload="metadata"></video><figcaption>AFTER</figcaption></figure>
+      <figure><video src="exemples/after-profils.mp4" muted playsinline controls preload="metadata"></video><figcaption>AFTER</figcaption></figure>
+      <figure><video src="exemples/after-journee.mp4" muted playsinline controls preload="metadata"></video><figcaption>AFTER</figcaption></figure>
+    </div>
+  </section>
+
+  <section>
+    <h2>Le prix</h2>
+    <div class="price">
+      <div><div class="amount">150 €</div><p>Le lot de 10 vidéos, pour les 3 premiers clients.</p></div>
+      <div><div class="amount">300 €</div><p>Le lot de 10 vidéos ensuite.</p></div>
+    </div>
+    <p class="note">Sans abonnement. Tu commandes un lot quand tu en as besoin.</p>
+  </section>
+
+  <section class="cta" id="essai">
+    <h2>Ta vidéo d'essai est gratuite</h2>
+    <p>Les demandes ouvrent dans quelques jours. Garde cette page, le contact sera affiché ici.</p>
+  </section>
+
+  <footer>Les vidéos sont fabriquées avec l'aide d'outils d'IA et relues par un humain avant envoi.</footer>
+</div>
+</body>
+</html>
