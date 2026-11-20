@@ -64,6 +64,7 @@ section { display: flex; flex-direction: column; gap: 24px; }
 .todo { border: 2px dashed var(--accent); padding: 12px 14px; font-size: 0.92rem; color: var(--muted); max-width: none; }
 footer { color: var(--muted); font-size: 0.9rem; }
 body { margin: 0; }
+.phone-video { flex: 0 1 280px; width: 280px; max-width: 100%; aspect-ratio: 9 / 16; background: var(--ink); display: block; }
 </style>
 </head>
 <body>
@@ -76,9 +77,7 @@ body { margin: 0; }
       <p class="lead">Des vidéos verticales prêtes à publier sur TikTok, Reels et Shorts. Tu envoies ton logo et trois phrases sur ce que tu vends. Tu reçois tes vidéos en 5 jours.</p>
       <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfKRD9iNXQX4VlJCYE8ausJyiJxk0nvvhglA8SBUIi8p0oNeQ/viewform" target="_blank" rel="noopener">Je veux ma vidéo d'essai gratuite</a>
     </div>
-    <div class="phone" aria-label="Un lot de dix vidéos au format téléphone">
-      <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span>
-    </div>
+    <video class="phone-video" src="exemples/making-of.mp4" muted playsinline controls preload="metadata" aria-label="Making-of d'une pub en 6 étapes"></video>
   </header>
 
   <section>
